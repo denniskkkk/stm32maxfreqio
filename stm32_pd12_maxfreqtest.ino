@@ -4,6 +4,7 @@ const uint8_t led3 = PD13;
 const uint8_t led4 = PD15;
 
 
+
 void setup() {
   pinMode (led1, OUTPUT);
   pinMode (led2, OUTPUT);
@@ -13,11 +14,13 @@ void setup() {
     SerialUSB.end();
     delay (1000);
   }
-  SerialUSB.begin(115200);
-  //if (!SerialUSB.available()) {
-  //  delay (100);
-  //}
+ 
+ SerialUSB.begin(115200);
+  if (!SerialUSB.available()) {
+    delay (100);
+  }
   delay (2000);
+
   SerialUSB.println ("start!!!!!!!!!");
   // put your setup code here, to run once:
   while (1) {
